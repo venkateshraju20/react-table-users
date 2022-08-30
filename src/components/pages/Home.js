@@ -37,7 +37,8 @@ const Home = () => {
                 <th scope="col">Name</th>
                 <th scope="col">Username</th>
                 <th scope="col">Email</th>
-                <th scope="col">Website</th>
+                <th scope="col">Company</th>
+                <th scope="col">City</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
@@ -49,28 +50,29 @@ const Home = () => {
                     <td>{user.name}</td>
                     <td>{user.username}</td>
                     <td>{user.email}</td>
-                    <td>{user.website}</td>
+                    <td>{user.company.name}</td>
+                    <td>{user.address.city}</td>
                     <td>
                       <NavLink
                         className="btn btn-primary mr-2"
                         style={{ marginRight: "10px" }}
                         to={`/users/${user.id}`}
                       >
-                        View
+                        <i class="fa fa-eye" aria-hidden="true"></i>
                       </NavLink>
                       <NavLink
                         className="btn btn-outline-primary mr-2"
                         style={{ marginRight: "10px" }}
                         to={`/user/edit/${user.id}`}
                       >
-                        Edit
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
                       </NavLink>
                       <NavLink
                         className="btn btn-outline-danger"
                         to="/"
                         onClick={() => onDelete(user.id)}
                       >
-                        Delete
+                        <i class="fa fa-trash" aria-hidden="true"></i>
                       </NavLink>
                     </td>
                   </tr>
